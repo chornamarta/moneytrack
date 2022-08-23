@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
+
   def index 
-    @expenses = Expense.all
+    @expenses = current_user.expenses
   end
 
   def new 
@@ -9,7 +10,7 @@ class ExpensesController < ApplicationController
 
   def create 
     @expense = Expense.new(expense_params)
-    @expense.user = User.first
+    @expense.user = current_user
     if @expense.save
       # flash[:notice] = "Article was created successfully."
       redirect_to expenses_path
@@ -18,8 +19,14 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def destroy 
+    Expense.where(user_id: current_user.id).destroy_all
+    redirect_to root_path
+  end
+
   private
   def expense_params
     params.require(:expense).permit(:category,:cost, :date)
   end
+
 end

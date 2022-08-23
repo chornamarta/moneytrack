@@ -1,31 +1,41 @@
 <nav class="navbar  navbar-expand-lg navbar-light bg-light ">
-  <a class="navbar-brand" id="logo" href="#">MoneyTrack</a>
+  <%= link_to 'MoneyTrack', root_path, class:"navbar-brand" ,id:"logo" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse w-100 order-2 dual-collapse2" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto mr-5">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Expenses
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <% if logged_in?%>
+    <div class="collapse navbar-collapse w-100 order-2 dual-collapse2" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mr-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Expenses
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'List of expenses', expenses_path , class:"dropdown-item" %>
             <%= link_to 'Create new expense', new_expense_path , class:"dropdown-item" %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Delete all expenses</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown mr-4">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Statistic
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Show by category</a>
-            <a class="dropdown-item" href="#">Show by date</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+            <div class="dropdown-divider"></div>
+            <%# <a class="dropdown-item" href="#">Delete all expenses</a> %>
+            <%= link_to 'Delete all expenses',expense_path(current_user.expenses) ,method: :delete, data: { confirm: 'Are you sure?' }, class:"dropdown-item" %>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Statistic
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Show by category</a>
+              <a class="dropdown-item" href="#">Show by date</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <%= current_user.username %>`s Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Log Out', logout_path, class:"dropdown-item", method: :delete %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  <%end%>
 </nav>

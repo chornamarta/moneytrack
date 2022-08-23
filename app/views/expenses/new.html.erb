@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-6">
       <%= form_with(model: @expense, class: "shadow p-3 mb-3 rounded",id:"form-color", local: true) do |f| %>
@@ -20,7 +20,7 @@
         <div class="form-group row">
           <%= f.label :date, class: "col-2 col-form-label text-light" %>
           <div class="col-10">
-            <%= f.date_select :date, include_blank: true , class: "form-control shadow rounded", placeholder: "Enter cost" %> 
+            <%= f.date_select :date, include_blank: true, start_year: 1990 ,class: "form-control shadow rounded", placeholder: "Enter cost" %> 
           </div>
         </div>
 
@@ -30,10 +30,11 @@
         </div>
       <% end %>
     </div>
-    <div class="mb-3">
-      <%# <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-dark" %>
-    </div>
+
   </div>
 
+    <div class="row justify-content-center mt-4" id="linkfromnew">
+      <%= link_to '[ Cancel and return to expense listing ]', expenses_path, class: "text-dark" %>
+    </div>
 </div>
 

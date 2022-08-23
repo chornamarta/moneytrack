@@ -9,7 +9,7 @@ class ExpensesController < ApplicationController
 
   def create 
     @expense = Expense.new(expense_params)
-    # @article.user = current_user
+    @expense.user = User.first
     if @expense.save
       # flash[:notice] = "Article was created successfully."
       redirect_to expenses_path

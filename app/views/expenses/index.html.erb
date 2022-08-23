@@ -1,28 +1,45 @@
-<div class="container mt-4">
-  <div class="row justify-content-md-center">
-    <div class="col-8 mt-4">
-      <table class="table table-striped table-dark ">
-        <thead>
-          <tr>
-            <th scope="col">Category</th>
-            <th scope="col">Cost</th>
-            <th scope="col">Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @expenses.each do |expense| %>
-            <tr>
-              <td><%= expense.category%></td>
-              <td><%= expense.cost %></td>
-              <% if expense.date?%>
-                <td><%= expense.date.strftime("%m/%d/%Y") %></td>
-              <% else %>
-                <td><%= expense.date %></td>
-              <%end%>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+<% if current_user.expenses.empty? %>
+  <div class="container mt-5">
+    <div class="row justify-content-md-center">
+      <div class="col-6 mt-5">
+        <h2 class="text-center" id="text-zag">Ooops! You don`t have any records</h2>
+        <h4 class="text-center" id="text-zag">Please, create new expense</h4>
+        <div class="row justify-content-center">
+          <%=link_to 'New expense', new_expense_path, id:"spec_but", class:"btn btn-outline-dark btn-lg mt-3 "%>
+        </div>
+        
+      </div>
     </div>
   </div>
-</div>
+  
+<% else %>
+  <div class="container mt-4">
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <table class="table table-striped table-dark ">
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @expenses.each do |expense| %>
+              <tr>
+                <td><%= expense.category%></td>
+                <td><%= expense.cost %></td>
+                <% if expense.date?%>
+                  <td><%= expense.date.strftime("%m/%d/%Y") %></td>
+                <% else %>
+                  <td><%= expense.date %></td>
+                <%end%>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<% end %>
+

@@ -1,5 +1,6 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
+    <%= render 'shared/errors', obj: @expense %>
     <div class="col-6">
       <%= form_with(model: @expense, class: "shadow p-3 mb-3 rounded",id:"form-color", local: true) do |f| %>
 
@@ -32,7 +33,6 @@
     </div>
 
   </div>
-
     <div class="row justify-content-center mt-4" id="linkfromnew">
       <%= link_to '[ Cancel and return to expense listing ]', expenses_path, class: "text-dark" %>
     </div>

@@ -12,7 +12,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.user = current_user
     if @expense.save
-      # flash[:notice] = "Article was created successfully."
+      flash[:notice] = "Expense was created successfully."
       redirect_to expenses_path
     else
       render 'new'

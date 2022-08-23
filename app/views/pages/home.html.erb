@@ -4,7 +4,11 @@
     <h1 class="display-4">Money Track</h1>
     <p class="lead">This is a simple tracker for your expenses</p>
     <hr class="my-4">
-    <%if !(logged_in?) %>
+    <%if logged_in? %>
+      <h4>Happy to see you, <%= current_user.username %>!</h4>
+      <h5>View your expenses</h5>
+      <%=link_to 'List of expenses', expenses_path, class:"btn btn-outline-dark btn-lg mt-3"%>
+    <%else%>
       <h4>Please, LogIn or SignUp to continue</h4>
       <%=link_to 'Log In', login_path, class:"btn btn-outline-dark btn-lg mr-5 mt-4"%>
       <%=link_to 'Sign Up', signup_path, class:"btn btn-outline-dark  btn-lg mt-4"%>

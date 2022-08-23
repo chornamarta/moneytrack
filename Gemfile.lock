@@ -102,6 +102,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-x64-mingw32)
       racc (~> 1.4)
+    pg (1.4.3-x64-mingw32)
     public_suffix (5.0.0)
     puma (4.3.12)
       nio4r (~> 2.0)
@@ -204,6 +205,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   hirb
   jbuilder (~> 2.7)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.5, >= 6.0.5.1)
   sass-rails (>= 6)

@@ -11,8 +11,8 @@
           Expenses
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">List of expenses</a>
-            <a class="dropdown-item" href="#">Create new expense</a>
+            <%= link_to 'List of expenses', expenses_path , class:"dropdown-item" %>
+            <%= link_to 'Create new expense', new_expense_path , class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Delete all expenses</a>
         </div>

@@ -1,24 +1,25 @@
-# README
+# Money Track
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app can help you to controll your expenses
 
-Things you may want to cover:
+You can try it by click on this link:
+https://moneytracker-chorna.herokuapp.com/
 
-* Ruby version
+Or you can install localy on your computer:
 
-* System dependencies
+* before install check if you have proper version of Ruby and Ruby on Rails, SQLite, NodeJS and Yarn
 
-* Configuration
+* after download, open folder and run command below for installing all dependencies
+```sh
+bundle install
+``` 
+* next, try to run the program by the folowing command
+``` sh
+rails s 
+```
+or
+``` sh
+rails server
+```
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

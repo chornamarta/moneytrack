@@ -23,7 +23,8 @@
             Statistic
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Show by category</a>
+              <%# <a class="dropdown-item" href="#">Show by category</a> %>
+              <%= link_to 'Show by category', statcategory_path , class:"dropdown-item" %>
               <a class="dropdown-item" href="#">Show by date</a>
           </div>
         </li>

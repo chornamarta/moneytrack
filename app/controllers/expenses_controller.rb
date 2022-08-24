@@ -24,6 +24,10 @@ class ExpensesController < ApplicationController
     redirect_to root_path
   end
 
+  def count_cat
+    @expenses = current_user.expenses.group(:category).sum(:cost)
+  end
+
   private
   def expense_params
     params.require(:expense).permit(:category,:cost, :date)

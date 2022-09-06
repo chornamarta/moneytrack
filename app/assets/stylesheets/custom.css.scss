@@ -1,15 +1,15 @@
 @import 'bootstrap/dist/css/bootstrap';
 .navbar {
-    background-color: #2C3333 !important;    
+    background-color: #7165B1 !important;    
 }
 .nav-link {
-    color: #A5C9CA !important;
+    color: white !important;
 }
 #linkfromnew :hover{
     color: #A5C9CA !important;
 }
 #text-zag{
-    color: #A5C9CA !important;
+    color: black !important;
 }
 #spec_but{
     background-color: #A5C9CA !important;
@@ -18,7 +18,7 @@
 #logo {
     float: left;
     font-size: 1.7em;
-    color: #A5C9CA;
+    color: white;
     text-transform: uppercase;
     letter-spacing: -1px;
     font-weight: bold;
@@ -26,7 +26,7 @@
 .jumbotron {
     background-position: center ;
     height: 425px;
-    background-color: #2C3333;
+    background-color: #B8C8FF;
   }
 #home-container {
     margin-top: 25px;
@@ -34,24 +34,50 @@
 html,body {
     height: 100%;
 }
-  
+.text-c{
+    font-weight: bold;
+    text-align: center;
+}
 #page-content {
     flex: 1 0 auto;
-    background-color: #395B64;
+    background-color: #E9EDFF;
+}
+.policy{
+    font-size: 10px;
+    color: #8D8D8D;
+    text-align: center;
+}
+.card{
+   border: none;
+}
+.card-body{
+    background-color: #E9EDFF;
 }
 .card{
     background-color:  #2C3333 !important;
 }
 
 #sticky-footer{
-    background-color: #2C3333 !important;
-    color:#A5C9CA;
+    background-color: #B8C8FF !important;
+    color:white;
 }
-#form-color{
-    background-color: #2e1d1255 !important;
+// #form-color{
+//     background-color: #2e1d1255 !important;
+// }
+#form-des{
+    border-radius: 15px !important;
 }
-.btn-outline-dark{
-    background-color: #395B64 !important;
+.su-text{
+    font-size: 15px;
+    text-align: center;
+}
+.signup{
+    color: #7165B1;
+}
+.btn-primary{
+    background-color: #7165B1 !important;
+    border: none;
+    border-radius: 15px;
 }
 
 .card-header{

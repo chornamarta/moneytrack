@@ -23,3 +23,7 @@ rails server
 ```
 
 
+If you have all necessary things downloaded, app will be open soon
+
+Good luck!
+
